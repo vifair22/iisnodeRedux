@@ -626,6 +626,12 @@ void WINAPI CProtocolBridge::CreateNamedPipeConnection(DWORD error, DWORD bytesT
 
     if (INVALID_HANDLE_VALUE == pipe)
     {
+        // Clean up old pipe handle, otherwise there will be a handle leak
+        HANDLE oldPipe = ctx->GetPipe();
+        if (oldPipe != NULL && oldPipe != INVALID_HANDLE_VALUE) {
+            CloseHandle(oldPipe);
+        }
+		
         ErrorIf(INVALID_HANDLE_VALUE == (pipe = CreateFile(
             ctx->GetNodeProcess()->GetNamedPipeName(),
             GENERIC_READ | GENERIC_WRITE,
