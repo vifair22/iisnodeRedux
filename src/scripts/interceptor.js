@@ -206,5 +206,4 @@
 })();
 
 // run the original application entry point
-
-import(require('url').pathToFileUrl(process.argv[1]));
+require('child_process').spawn(process.argv[0], process.argv.slice(1));
