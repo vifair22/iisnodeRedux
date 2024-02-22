@@ -1,6 +1,21 @@
 Hosting node.js applications in IIS on Windows
 ===
 
+**Fork Information**
+
+This project is a fork of [Azure/iisnode](https://github.com/Azure/iisnode) which is a fork of [tjanczuk/iisnode](https://github.com/tjanczuk/iisnode).
+
+Unfortunately it looks like neither of these projects are maintained anymore. I created this repo so I can maintain this for my personal projects as well as my work projects.
+
+All copyright credit goes to its respective owners. Please see the LICENSE.txt file for more info. For copyright disputes please reach out to me.
+
+**Goals of this fork**
+- Make sure iisnode remains compatible with the latest versions of Node.js and IIS/AZURE.
+- Make improvements in the code to increase reliability, security and performance where it makes sense.
+- Add features that stay true to the projects intention. I.E., providing performant and easy to use, node.js to IIS.
+- Restructure the Readme, Wiki, code comments, and build process to become easier to use. IISnode should be a easy to deploy and use.
+- Version the program semantic versioning scheme following Apache Commons recommendation for program release versioning https://commons.apache.org/releases/versioning.html
+
 **Branches**
 
 - master: stable version.

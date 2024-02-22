@@ -9,7 +9,7 @@
            Name="iisnode for iis 7.x dev package" 
            Language="1033" 
            Version="$(var.version)"
-           Manufacturer="Microsoft Corporation"            
+           Manufacturer="Vincent Fairfield"            
            UpgradeCode="607788E9-4C47-4375-9E7F-1089CAAEB685">
 
     <Package InstallerVersion="200" Compressed="yes" Platform="x86" />
