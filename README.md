@@ -23,7 +23,7 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
 
 ## Prerequisites for using
 
-- Windows 10,11 or Windows Server 2016, 2019, 2022 (Could work on older workstation/server OSes but is built on and tested for Windows 11 / Server 2022 *Anything older than these are EOL from Microsoft, you are on your own.*)
+- Windows 10,11 or Windows Server 2016, 2019, 2022 (Could work on older workstation/server OSes but is built on and tested for Windows 11 / Server 2022. *Anything older than these are EOL from Microsoft, you are on your own.*)
 - IIS 10.x with IIS Management Tools and ASP.NET
 - WebSocket functionality requires IIS 8.x on Windows 8 or Windows Server 2012 or newer
 - [URL rewrite module for IIS](http://www.iis.net/download/URLRewrite)
@@ -72,7 +72,10 @@ http.createServer(function (req, res) {
 
 
 ## How-to's
-- Links will go here when the wiki is done.
+- [How to add IISnode as a Native Module](https://github.com/vifair22/iisnodeRedux/wiki/How-to-add-IISnode-as-a-Native-Module)
+- [A simple Server]([!](https://github.com/vifair22/iisnodeRedux/wiki/The-Easy-Way))
+- [Mixed content]([!](https://github.com/vifair22/iisnodeRedux/wiki/The-Ideal-Way)) (Dynamic and Static)
+- [An in production example]([!](https://github.com/vifair22/iisnodeRedux/wiki/All-In))
 
 ## Prerequisites for building
 
