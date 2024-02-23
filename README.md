@@ -64,6 +64,8 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
                 </rule>
             </rules>
         </rewrite>
+        <httpErrors errorMode="Detailed" />
+    </system.webServer>
 </configuration>
 
 ```
