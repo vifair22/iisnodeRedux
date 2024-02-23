@@ -73,9 +73,9 @@ http.createServer(function (req, res) {
 
 ## How-to's
 - [How to add IISnode as a Native Module](https://github.com/vifair22/iisnodeRedux/wiki/How-to-add-IISnode-as-a-Native-Module)
-- [A simple Server]([!](https://github.com/vifair22/iisnodeRedux/wiki/The-Easy-Way))
-- [Mixed content]([!](https://github.com/vifair22/iisnodeRedux/wiki/The-Ideal-Way)) (Dynamic and Static)
-- [An in production example]([!](https://github.com/vifair22/iisnodeRedux/wiki/All-In))
+- [A simple Server](https://github.com/vifair22/iisnodeRedux/wiki/The-Easy-Way)
+- [Mixed content](https://github.com/vifair22/iisnodeRedux/wiki/The-Ideal-Way) (Dynamic and Static)
+- [An in production example](https://github.com/vifair22/iisnodeRedux/wiki/All-In)
 
 ## Prerequisites for building
 
