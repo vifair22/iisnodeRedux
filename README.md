@@ -56,6 +56,14 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
         <handlers>
             <add name="iisnode" path="entry.js" verb="*" modules="iisnode" resourceType="File" requireAccess="Script" />
         </handlers>
+        <rewrite>
+            <rules>
+                <rule name="ReqToServerjs">
+                    <match url=".*" />
+                    <action type="Rewrite" url="entry.js" />
+                </rule>
+            </rules>
+        </rewrite>
 </configuration>
 
 ```
