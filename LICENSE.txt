@@ -1,21 +1,28 @@
-iisnode's license follows:
+Copyright 2024 Vincent Fairfield
 
-====
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
 
-Copyright 2011 Microsoft Corporation
+       http://www.apache.org/licenses/LICENSE-2.0
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and
-limitations under the License.
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
 
 ====
 
 This license applies to all parts of iisnode that are not externally maintained components.
 
 The externally maintained components are:
+
+Component: azure/iisnode  
+Location: src/
+Copyright: Copyright (c) 2011, Microsoft Corporation  
+License: Apache 2.0 https://github.com/Azure/iisnode/blob/295c6cf7d45b663ea3d5709ca96c473d20f39a5d/LICENSE.txt
+
 
 Component: node-inspector  
 Location: src/iisnode/node-inspector/node_modules/node-inspector
