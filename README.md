@@ -61,12 +61,21 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
 ```
 8. Setup a simple Node.js server under `entry.js`
 ```js
-var http = require('http');
+const http = require('http');
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello, world!');
-}).listen(process.env.PORT); 
+http.createServer((req, res) => {
+
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    
+ res.end(JSON.stringify({
+  
+  name: "Nodejs IIS!",
+  iisnodeV : process.env.IISNODE_VERSION,
+  nodeV : process.version,
+ 
+ }));
+ 
+}).listen(process.env.PORT);
 ```
 
 
