@@ -1,3 +1,7 @@
+# Set the working directory to the script directory
+$scriptDir = $PSScriptRoot
+Set-Location -Path $scriptDir
+
 # Get the version number from version.txt
 $version = Get-Content -Path "./src/version.txt"
 
@@ -5,6 +9,9 @@ $version = Get-Content -Path "./src/version.txt"
 $sourceDirectoryx64 = "./build/release/x64"
 $sourceDirectoryx86 = "./build/release/x86"
 $destinationDirectory = "./release"
+
+# Remove existing files in the destination directory
+Remove-Item -Path $destinationDirectory\* -Force -Recurse
 
 # Create the destination directory if it doesn't exist
 if (-not (Test-Path -Path $destinationDirectory)) {
