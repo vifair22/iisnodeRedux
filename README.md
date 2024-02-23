@@ -41,8 +41,9 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
 2. Install the [URL rewrite module for IIS](http://www.iis.net/download/URLRewrite)
 3. [Latest node.js build for Windows](https://nodejs.org/en/download/current)
 4. Install the latest [Release of IISnode](https://github.com/vifair22/iisnodeRedux/releases)
-5. Setup a new site in your IIS manager
-6. Put a basic `web.config` like this in your `wwwroot`
+5. Add IISnode as a [Managed Module](!) in IIS
+6. Setup a new site in your IIS manager
+7. Put a basic `web.config` like this in your `wwwroot`
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
@@ -58,7 +59,7 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
 </configuration>
 
 ```
-7. Setup a simple Node.js server under `entry.js`
+8. Setup a simple Node.js server under `entry.js`
 ```js
 var http = require('http');
 
