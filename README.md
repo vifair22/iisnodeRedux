@@ -7,7 +7,7 @@ This project is a fork of [Azure/iisnode](https://github.com/Azure/iisnode) whic
 
 Unfortunately it looks like neither of these projects are maintained anymore. I created this repo so I can maintain this for my personal projects as well as my work projects.
 
-All copyright credit goes to its respective owners. Please see the LICENSE.txt file for more info. For copyright disputes please reach out to me.
+All copyright credit goes to its respective owners. Please see the LICENSE.txt file for more info.
 
 ## Goals of this fork
 - Make sure iisnode remains compatible with the latest versions of Node.js and IIS/AZURE.
@@ -35,17 +35,39 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
 - To set up samples, from the administrative command prompt run `%programfiles%\iisnode\setupsamples.bat`
 - Go to `http://localhost/node`
 
-## Installing for IIS Express/WebMatrix *Deprecated*
 
-- [Install WebMatrix using the Web Platform Installer](http://www.microsoft.com/web/webmatrix/)
-- Open WebMatrix, choose “Site from folder”, enter %localappdata%\iisnode\www, start the site, and play with the iisnode samples, or
-- Use node.js templates to get started quickly with an Express application or a skeleton Hello World
+## Getting Started with IISnode
+1. Install the IIS feature
+2. Install the [URL rewrite module for IIS](http://www.iis.net/download/URLRewrite)
+3. [Latest node.js build for Windows](https://nodejs.org/en/download/current)
+4. Install the latest [Release of IISnode](https://github.com/vifair22/iisnodeRedux/releases)
+5. Setup a new site in your IIS manager
+6. Put a basic `web.config` like this in your `wwwroot`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <iisnode 
+            nodeProcessCommandLine="C:\Program Files\nodejs\node.exe"
+            watchedFiles="*.js;node_modules\*;routes\*.js;views\*.pug;api\*.js"
+            loggingEnabled="true"
+        />
+        <handlers>
+            <add name="iisnode" path="entry.js" verb="*" modules="iisnode" resourceType="File" requireAccess="Script" />
+        </handlers>
+</configuration>
 
-## Installing for IIS Express 8 on Windows x64 *Deprecated*
+```
+7. Setup a simple Node.js server under `entry.js`
+```js
+var http = require('http');
 
-This can be a head-scratcher since IIS Express 8 gives you both 32-bit and 64-bit versions (http://www.iis.net/learn/extensions/introduction-to-iis-express/iis-80-express-readme). You can either:
-- Install the full x64 version, then in Visual Studio go to Tools > Options > Projects and Solutions > Web Projects > Use the 64 bit version of IIS Express. This way you have a single install for both IIS and IIS Express.
-- Separately install iisnode express version (https://github.com/azure/iisnode/wiki/iisnode-releases).
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end('Hello, world! [helloworld sample; iisnode version is ' + process.env.IISNODE_VERSION + ', node version is ' + process.version + ']');
+}).listen(process.env.PORT); 
+```
+
 
 
 ## How-to's
@@ -55,25 +77,6 @@ This can be a head-scratcher since IIS Express 8 gives you both 32-bit and 64-bi
 
 - [Visual Studio 2022 Community for Windows Desktop](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/)
 - [WIX Toolset v3.14](https://github.com/wixtoolset/wix3/releases)
-
-## Building
-
-For x86 build:
-
-```
-msbuild /p:Platform=Win32 src\iisnode\iisnode.sln
-```
-
-For x64 build:
-
-```
-msbuild /p:Platform=x64 src\iisnode\iisnode.sln
-```
-
-## Installing after build
-
-- For IIS 10.x: `build\release\{x64|x86}\iisnode-full.msi`
-- For IIS Express 7.x: `build\release\x86\iisnode-express.msi`
 
 
 ## Resources & documentation
