@@ -31,8 +31,8 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
 
 ## Installing for IIS 10.x
 
-- Install iisnode for IIS 10.x: [Current Release](https://github.com/vifair22/iisnodeRedux/releases) choose the correct architecture for your system
-- To set up samples, from the administrative command prompt call `%programfiles%\iisnode\setupsamples.bat`
+- Install iisnode for IIS 10.x: Download the [Current Release](https://github.com/vifair22/iisnodeRedux/releases) and choose the correct architecture for your system
+- To set up samples, from the administrative command prompt run `%programfiles%\iisnode\setupsamples.bat`
 - Go to `http://localhost/node`
 
 ## Installing for IIS Express/WebMatrix *Deprecated*
@@ -48,7 +48,7 @@ This can be a head-scratcher since IIS Express 8 gives you both 32-bit and 64-bi
 - Separately install iisnode express version (https://github.com/azure/iisnode/wiki/iisnode-releases).
 
 
-## Howtos
+## How-to's
 - Links will go here when the wiki is done.
 
 ## Prerequisites for building
