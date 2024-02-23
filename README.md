@@ -91,6 +91,7 @@ http.createServer((req, res) => {
 
 
 ## How-to's
+- [How to pass options to IISnode](https://github.com/vifair22/iisnodeRedux/wiki/How-to-pass-options-to-IISnode)
 - [How to add IISnode as a Native Module](https://github.com/vifair22/iisnodeRedux/wiki/How-to-add-IISnode-as-a-Native-Module)
 - [A simple Server](https://github.com/vifair22/iisnodeRedux/wiki/The-Easy-Way)
 - [Mixed content](https://github.com/vifair22/iisnodeRedux/wiki/The-Ideal-Way) (Dynamic and Static)
