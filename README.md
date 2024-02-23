@@ -11,7 +11,7 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
 
 ## Goals of this fork
 - Make sure iisnode remains compatible with the latest versions of Node.js and IIS/AZURE.
-- Make improvements in the code to increase reliability, security and performance where it makes sense.
+- Make improvements in the code to increase reliability, security, and performance where it makes sense.
 - Add features that stay true to the projects intention. I.E., providing performant and easy to use, node.js under IIS.
 - Restructure the Readme, Wiki, code comments, and build process so they are easier to use. IISnode should be a easy to deploy and use.
 - Version the program using Semantic Versioning scheme following Apache Commons recommendation for program release versioning [Info Here](https://commons.apache.org/releases/versioning.html)
