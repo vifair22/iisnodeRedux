@@ -23,7 +23,6 @@ Location: src/
 Copyright: Copyright (c) 2011, Microsoft Corporation  
 License: Apache 2.0 https://github.com/Azure/iisnode/blob/295c6cf7d45b663ea3d5709ca96c473d20f39a5d/LICENSE.txt
 
-
 Component: node-inspector  
 Location: src/iisnode/node-inspector/node_modules/node-inspector
 Copyright: Copyright (c) 2011, Danny Coates 
