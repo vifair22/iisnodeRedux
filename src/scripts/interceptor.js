@@ -166,7 +166,7 @@
             }
             else {
                 data = data.toString().replace(/\n/g, '\r\n');
-                return new Buffer(data, typeof encoding === 'string' ? encoding : 'utf8');
+                return Buffer.from(data, typeof encoding === 'string' ? encoding : 'utf8');
             }
         };
 
@@ -206,5 +206,4 @@
 })();
 
 // run the original application entry point
-
 require(process.argv[1]);

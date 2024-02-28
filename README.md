@@ -1,120 +1,108 @@
 Hosting node.js applications in IIS on Windows
 ===
 
-**Fork Information**
+# Fork Information
 
 This project is a fork of [Azure/iisnode](https://github.com/Azure/iisnode) which is a fork of [tjanczuk/iisnode](https://github.com/tjanczuk/iisnode).
 
 Unfortunately it looks like neither of these projects are maintained anymore. I created this repo so I can maintain this for my personal projects as well as my work projects.
 
-All copyright credit goes to its respective owners. Please see the LICENSE.txt file for more info. For copyright disputes please reach out to me.
+All copyright credit goes to its respective owners. Please see the LICENSE.txt file for more info.
 
-**Goals of this fork**
+## Goals of this fork
 - Make sure iisnode remains compatible with the latest versions of Node.js and IIS/AZURE.
-- Make improvements in the code to increase reliability, security and performance where it makes sense.
-- Add features that stay true to the projects intention. I.E., providing performant and easy to use, node.js to IIS.
-- Restructure the Readme, Wiki, code comments, and build process to become easier to use. IISnode should be a easy to deploy and use.
-- Version the program semantic versioning scheme following Apache Commons recommendation for program release versioning https://commons.apache.org/releases/versioning.html
+- Make improvements in the code to increase reliability, security, and performance where it makes sense.
+- Add features that stay true to the projects intention. I.E., providing performant and easy to use, node.js under IIS.
+- Restructure the Readme, Wiki, code comments, and build process so they are easier to use. IISnode should be a easy to deploy and use.
+- Version the program using Semantic Versioning scheme following Apache Commons recommendation for program release versioning [Info Here](https://commons.apache.org/releases/versioning.html)
 
-**Branches**
+## Branches
 
-- master: stable version.
+- **master: stable version.**
 - iisnode-dev: development branch.
 
-**Why would I want to do it?**
+## Prerequisites for using
 
-[Benefits](https://github.com/tjanczuk/iisnode/wiki)
-
-**Who uses iisnode?**
-
-- [Microsoft azure - benefits](http://blogs.msdn.com/b/hanuk/archive/2012/05/05/top-benefits-of-running-node-js-on-windows-azure.aspx)
-- [Microsoft azure - get started with node.js](http://azure.microsoft.com/en-us/develop/nodejs/)
-- [appharbor.com](http://blog.appharbor.com/2012/01/19/announcing-node-js-support)
-- [discountasp.net](http://discountasp.net/press/2012_06_12_free-webmatrix-v2-rc-hosting-with-nodejs.aspx)
-- [arvixe.com](http://arvixe.com)
-- [smarterasp.net](http://www.smarterasp.net/)
-- [gearhost.com](http://gearhost.com/)
-- [webecs.com](http://webecs.com/)
-
-**Prerequisites for using**
-
-- Windows Vista, Windows 7, Windows 8, Windows Server 2008, or Windows Server 2012
-- IIS 7.x with IIS Management Tools and ASP.NET
-- WebSocket functionality requires IIS 8.x on Windows 8 or Windows Server 2012
+- Windows 10,11 or Windows Server 2016, 2019, 2022 (Could work on older workstation/server OSes but is built on and tested for Windows 11 / Server 2022. *Anything older than these are EOL from Microsoft, you are on your own.*)
+- IIS 10.x with IIS Management Tools and ASP.NET
+- WebSocket functionality requires IIS 8.x on Windows 8 or Windows Server 2012 or newer
 - [URL rewrite module for IIS](http://www.iis.net/download/URLRewrite)
-- [Latest node.js build for Windows](http://go.microsoft.com/?linkid=9784334)
+- [Latest node.js build for Windows](https://nodejs.org/en/download/current)
 
-**Installing for IIS 7.x/8.x**
+## Installing for IIS 10.x
 
-- Install iisnode for IIS 7.x/8.x: [x86](https://github.com/azure/iisnode/releases/download/v0.2.21/iisnode-full-v0.2.21-x86.msi) or [x64](https://github.com/azure/iisnode/releases/download/v0.2.21/iisnode-full-v0.2.21-x64.msi) - choose bitness matching your system
-- To set up samples, from the administrative command prompt call `%programfiles%\iisnode\setupsamples.bat`
+- Install iisnode for IIS 10.x: Download the [Current Release](https://github.com/vifair22/iisnodeRedux/releases) and choose the correct architecture for your system
+- To set up samples, from the administrative command prompt run `%programfiles%\iisnode\setupsamples.bat`
 - Go to `http://localhost/node`
 
-**Installing for IIS Express/WebMatrix**
 
-- [Install WebMatrix using the Web Platform Installer](http://www.microsoft.com/web/webmatrix/)
-- Open WebMatrix, choose “Site from folder”, enter %localappdata%\iisnode\www, start the site, and play with the iisnode samples, or
-- Use node.js templates to get started quickly with an Express application or a skeleton Hello World
-
-**Installing for IIS Express 8 on Windows x64**
-This can be a head-scratcher since IIS Express 8 gives you both 32-bit and 64-bit versions (http://www.iis.net/learn/extensions/introduction-to-iis-express/iis-80-express-readme). You can either:
-- Install the full x64 version, then in Visual Studio go to Tools > Options > Projects and Solutions > Web Projects > Use the 64 bit version of IIS Express. This way you have a single install for both IIS and IIS Express.
-- Separately install iisnode express version (https://github.com/azure/iisnode/wiki/iisnode-releases).
-
-
-**Howtos**
-=======
-- [the basics](http://tomasz.janczuk.org/2011/08/hosting-nodejs-applications-in-iis-on.html)
-- [**NEW: websockets**] (http://tomasz.janczuk.org/2012/11/how-to-use-websockets-with-nodejs-apps.html)
-- [using with express framework](http://tomasz.janczuk.org/2011/08/hosting-express-nodejs-applications-in.html)
-- [using with URL rewrite module](http://tomasz.janczuk.org/2011/08/using-url-rewriting-with-nodejs.html)
-- [using with WebMatrix and IIS Express](http://tomasz.janczuk.org/2011/08/developing-nodejs-applications-in.html)
-- [site templates for WebMatrix](https://github.com/SteveSanderson/Node.js-Site-Templates-for-WebMatrix)
-- [using with mongodb](http://www.amazedsaint.com/2011/09/creating-10-minute-todo-listing-app-on.html)
-- [diagnosing problems with ETW traces](http://tomasz.janczuk.org/2011/09/using-event-tracing-for-windows-to.html)
-- [using with MVC](http://weblogs.asp.net/jgalloway/archive/2011/10/26/using-node-js-in-an-asp-net-mvc-application-with-iisnode.aspx)
-- [portuguese: node.js no windows: instalando o iisnode](http://vivina.com.br/nodejs-windows-parte-2)
-- [integrated debugging](http://tomasz.janczuk.org/2011/11/debug-nodejs-applications-on-windows.html)
-- [Debugging via VSCode](https://blog.immatt.com/2018/10/09/iisnode-modern-debugging-via-vscode/)
-- [pub/sub server using faye](http://weblogs.asp.net/cibrax/archive/2011/12/12/transform-your-iis-into-a-real-time-pub-sub-engine-with-faye-node.aspx)
-- [appharbor uses iisnode](http://blog.appharbor.com/2012/01/19/announcing-node-js-support)
-
-**Prerequisites for building**
-
-- All prerequisities for using
-- [Visual Studio Express 2012 for Windows Desktop](http://www.microsoft.com/visualstudio/eng/downloads)
-- [WIX Toolset v3.6](http://wix.codeplex.com/releases/view/93929)
-- [Windows SDK for Windows 8](http://msdn.microsoft.com/en-us/windows/desktop/hh852363)
-
-**Building**
-
-Build commands should be issued from the build environment set up with `"%programfiles(x86)%\Microsoft Visual Studio 11.0\Common7\Tools\VsDevCmd.bat"`, assuming default installation location of Visual Studio 2012 on x64 platform.
-
-For x86 build:
+## Getting Started with IISnode
+1. Install the IIS feature
+2. Install the [URL rewrite module for IIS](http://www.iis.net/download/URLRewrite)
+3. [Latest node.js build for Windows](https://nodejs.org/en/download/current)
+4. Install the latest [Release of IISnode](https://github.com/vifair22/iisnodeRedux/releases)
+5. Add IISnode as a [Managed Module](https://github.com/vifair22/iisnodeRedux/wiki/How-to-add-IISnode-as-a-Native-Module) in IIS (this is done by the MSI in recent versions)
+6. Setup a new site in your IIS manager
+7. Put a basic `web.config` like this in your `wwwroot`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <iisnode 
+            nodeProcessCommandLine="C:\Program Files\nodejs\node.exe"
+            watchedFiles="*.js;node_modules\*;routes\*.js;views\*.pug;api\*.js"
+            loggingEnabled="true"
+        />
+        <handlers>
+            <add name="iisnode" path="entry.js" verb="*" modules="iisnode" resourceType="File" requireAccess="Script" />
+        </handlers>
+        <rewrite>
+            <rules>
+                <rule name="ReqToServerjs">
+                    <match url=".*" />
+                    <action type="Rewrite" url="entry.js" />
+                </rule>
+            </rules>
+        </rewrite>
+        <httpErrors errorMode="Detailed" />
+    </system.webServer>
+</configuration>
 
 ```
-msbuild /p:Platform=Win32 src\iisnode\iisnode.sln
+8. Setup a simple Node.js server under `entry.js`
+```js
+const http = require('http');
+
+http.createServer((req, res) => {
+
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    
+ res.end(JSON.stringify({
+  
+  name: "Nodejs IIS!",
+  iisnodeV : process.env.IISNODE_VERSION,
+  nodeV : process.version,
+ 
+ }));
+ 
+}).listen(process.env.PORT);
 ```
 
-For x64 build:
 
-```
-msbuild /p:Platform=x64 src\iisnode\iisnode.sln
-```
 
-**Installing after build**
+## How-to's
+- [How to pass options to IISnode](https://github.com/vifair22/iisnodeRedux/wiki/How-to-pass-options-to-IISnode)
+- [How to add IISnode as a Native Module](https://github.com/vifair22/iisnodeRedux/wiki/How-to-add-IISnode-as-a-Native-Module)
+- [A simple Server](https://github.com/vifair22/iisnodeRedux/wiki/The-Easy-Way)
+- [Mixed content](https://github.com/vifair22/iisnodeRedux/wiki/The-Ideal-Way) (Dynamic and Static)
+- [An in production example](https://github.com/vifair22/iisnodeRedux/wiki/All-In)
 
-- For IIS 7.x/8.0: `build\debug\{x64|x86}\iisnode-full.msi`
-- For IIS Express 7.x: `build\debug\x86\iisnode-express.msi`
+## Prerequisites for building
 
-**Running tests**
+- [Visual Studio 2022 Community for Windows Desktop](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/)
+- [WIX Toolset v3.14](https://github.com/wixtoolset/wix3/releases)
 
-- Install for IIS 7.x/8.x (see previous sections)
-- `test\functional\test.bat`
-- note that for the WebSocket tests to pass you must be running in IIS 8.x on Windows 8 or Windows Server 2012
 
-**Resources & documentation**
+## Resources & documentation
 
-- [Releases](https://github.com/azure/iisnode/wiki/iisnode-releases)
-- [Wiki](https://github.com/tjanczuk/iisnode/wiki)
-- [Blog](http://tomasz.janczuk.org)
+- [Releases](https://github.com/vifair22/iisnodeRedux/releases)
