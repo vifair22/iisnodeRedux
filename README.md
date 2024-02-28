@@ -18,7 +18,7 @@ All copyright credit goes to its respective owners. Please see the LICENSE.txt f
 
 ## Branches
 
-- **master: stable version.**
+- **main: stable version.**
 - iisnode-dev: development branch.
 
 ## Prerequisites for using
